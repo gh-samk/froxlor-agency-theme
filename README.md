@@ -163,8 +163,7 @@ which is why each URL ends in `.css` or `.js`
 served locally - no requests to Google, and the interface looks the same even
 when the server has no internet connection. Colours derived in OKLCH, all
 text at least 4.5:1 contrast in light and dark, visible focus rings, motion
-only as feedback and switched off under `prefers-reduced-motion`. The design
-principles are in [`docs/PRODUCT.md`](docs/PRODUCT.md).
+only as feedback and switched off under `prefers-reduced-motion`.
 
 Pages added by other extensions look right with this theme as long as they
 take their colours from Bootstrap's CSS variables; the theme contains no
