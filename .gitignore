@@ -1,0 +1,8 @@
+# Editor and operating system files
+.DS_Store
+.idea/
+.vscode/
+*.swp
+
+# Local adjustments of the admin, never part of the package
+templates/Agency/assets/css/custom.css

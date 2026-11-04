@@ -1,0 +1,31 @@
+{
+	"global": {
+		"css": [
+			"../Froxlor/assets/scss/app.scss",
+			"assets/css/agency.css",
+			"assets/css/custom.css"
+		],
+		"js": [
+			"../Froxlor/assets/js/app.js"
+		],
+		"img": {
+			"ui": "../../../Froxlor/assets/img/logo.png",
+			"login": "../../../Froxlor/assets/img/logo.png"
+		}
+	},
+	"variants": {
+		"default": {
+			"color-scheme": "light",
+			"description": "Agency (light)"
+		},
+		"dark": {
+			"color-scheme": "dark",
+			"img": {
+				"ui": "../../../Froxlor/assets/img/logo_white.png",
+				"login": "../../../Froxlor/assets/img/logo_white.png"
+			},
+			"description": "Agency (dark)"
+		}
+	},
+	"author": "froxlor-agency-theme"
+}

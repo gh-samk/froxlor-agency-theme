@@ -1,0 +1,11 @@
+{
+	"templates/Agency/../Froxlor/assets/scss/app.scss": {
+		"file": "../../../theme_agency.php?file=froxlor.css"
+	},
+	"templates/Agency/../Froxlor/assets/js/app.js": {
+		"file": "../../../theme_agency.php?file=froxlor.js"
+	},
+	"templates/Agency/assets/css/agency.css": {
+		"file": "../../../theme_agency.php?file=agency.css"
+	}
+}
