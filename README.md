@@ -306,7 +306,6 @@ templates/Agency/assets/fonts/           Figtree (woff2) and its licence (OFL.tx
 scripts/lib.php                          userdata parser, database connection, theme reset (CLI only)
 scripts/privileges.sh                    privilege drop and path checks for install.sh/uninstall.sh
 scripts/reset-theme.php                  theme reset, called by uninstall.sh
-docs/PRODUCT.md                          design principles
 tests/                                   test scripts, see above
 ```
 
