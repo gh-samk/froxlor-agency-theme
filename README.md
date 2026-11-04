@@ -210,7 +210,7 @@ styles for any particular extension.
     the web root, whatever modes the checkout had;
   * every directory of the theme gets an empty `index.html`, like Froxlor's own
     template directories.
-* **CLI-only files.** `scripts/*.php` and `tests/*.php` answer any non-CLI
+* **CLI-only files.** `scripts/*.php` answer any non-CLI
   request with 404 and exit immediately, in case the package does end up
   below a web root.
 * **`theme_agency.php` is public and unauthenticated** - the browser loads it
@@ -259,39 +259,7 @@ styles for any particular extension.
 * Future 2.x releases (2.4): no version checks. As long as themes, `vite()`
   and the template lookup keep working the same way, the theme keeps working;
   re-running `install.sh` adapts the stubs to added or removed templates.
-  `php tests/theme.php /var/www/froxlor` checks the theme against an
-  installed Froxlor after an update.
 * Froxlor's `main` branch (version 3, a rewrite) is not supported.
-
-## Tests
-
-No database server and no Froxlor installation needed:
-
-```bash
-php tests/theme.php      # config.json, manifest and redirect fit together; runs the redirect in PHP's built-in web server
-php tests/install.php    # install.sh/uninstall.sh against a fake Froxlor in a temp dir (incl. planted
-                         # links, hostile file names, FIFOs, loose modes), theme reset on SQLite,
-                         # DSN/TLS options from a fake userdata.inc.php, userdata parser (never executes)
-```
-
-With the path of a Froxlor release as argument, `tests/theme.php` additionally
-checks that Froxlor's manifest has the expected entries and the logos are
-where the theme expects them, and `tests/install.php` uses that Froxlor's real
-template tree (read only; everything is written to a temporary directory):
-
-```bash
-php tests/theme.php /var/www/froxlor
-php tests/install.php /var/www/froxlor
-```
-
-`tests/install.php` needs the `pdo_sqlite` extension for the reset part and
-`pdo_mysql` for the TLS option checks, and skips those parts otherwise. The
-tests run as a normal user or as root; as root, `tests/install.php`
-additionally checks which user writes (root-owned, group/world-writable,
-foreign-owned and user-owned Froxlor directories and parent directories,
-using uid 65534) and that a dropped command has its own session, a clean
-environment, no extra descriptors and filtered output - do that in a
-disposable Linux container. `tests/` is not installed into Froxlor.
 
 ## Layout
 
@@ -306,7 +274,6 @@ templates/Agency/assets/fonts/           Figtree (woff2) and its licence (OFL.tx
 scripts/lib.php                          userdata parser, database connection, theme reset (CLI only)
 scripts/privileges.sh                    privilege drop and path checks for install.sh/uninstall.sh
 scripts/reset-theme.php                  theme reset, called by uninstall.sh
-tests/                                   test scripts, see above
 ```
 
 Installed into Froxlor: `theme_agency.php` and `templates/Agency/` (the files
