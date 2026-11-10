@@ -41,7 +41,7 @@ document root):
 
 ```bash
 cd /opt
-git clone https://github.com/lichtsignale-sk/froxlor-agency-theme.git
+git clone https://github.com/gh-samk/froxlor-agency-theme.git
 cd froxlor-agency-theme
 ./install.sh /var/www/froxlor
 ```
